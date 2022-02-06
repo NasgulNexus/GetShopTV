@@ -1,0 +1,35 @@
+.buttonClose {
+  width: 88px;
+  height: 52px;
+  position: absolute;
+  left: 91.56%;
+  top: 2.78%;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.buttonCloseIcon {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+}
+.buttonCloseIcon:before,
+.buttonCloseIcon:after {
+  position: absolute;
+  left: 22px;
+  content: " ";
+  height: 28px;
+  width: 3px;
+  top: -22px;
+  background-color: #333;
+}
+.buttonCloseIcon:before {
+  transform: rotate(45deg);
+}
+.buttonCloseIcon:after {
+  transform: rotate(-45deg);
+}
