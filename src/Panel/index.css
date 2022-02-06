@@ -1,10 +1,7 @@
 .PanelContainer {
   padding: 40px 24px;
-  position: absolute;
   width: 380px;
   height: 721px;
-  left: 0px;
-  top: -1px;
   background: #86d3f4;
 }
 .PanelMainText {

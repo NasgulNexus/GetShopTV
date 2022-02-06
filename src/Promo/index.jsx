@@ -8,9 +8,15 @@ import QRPromoInformation from "../QRPromoInformation";
 const Promo = () => {
   return (
     <div>
-      <ButtonClose />
-      <Panel />
-      <QRPromoInformation />
+      <div className="PromoButtonClose">
+        <ButtonClose />
+      </div>
+      <div className="PromoPanel">
+        <Panel />
+      </div>
+      <div className="PromoQRInformation">
+        <QRPromoInformation />
+      </div>
     </div>
   );
 };

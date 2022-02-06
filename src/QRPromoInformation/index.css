@@ -1,7 +1,5 @@
 .QRPromoInformationContainer {
-  position: absolute;
-  left: 926px;
-  top: 570px;
+  display: flex;
 }
 .QRPromoInformationText {
   width: 194px;
