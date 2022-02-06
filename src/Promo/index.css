@@ -4,16 +4,19 @@
   height: 720px;
 }
 .PromoButtonClose {
+  z-index: 1;
   position: absolute;
-  left: 91.56%;
-  top: 2.78%;
+  left: 1170px;
+  top: 16px;
 }
 .PromoPanel {
+  z-index: 1;
   position: absolute;
   left: 0px;
   top: -1px;
 }
 .PromoQRInformation {
+  z-index: 1;
   position: absolute;
   left: 926px;
   top: 570px;
