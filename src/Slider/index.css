@@ -1,4 +1,49 @@
-.item {
+.Slider {
   width: 1280px;
   height: 720px;
+  position: relative;
+}
+.SliderTrack {
+  width: 100%;
+  height: 100%;
+  background-color: blanchedalmond;
+  display: flex;
+  overflow: hidden;
+}
+.SliderItem {
+  min-width: 1280px;
+  height: 100%;
+  background-color: blueviolet;
+  transition: 1s;
+}
+
+.SliderButton {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.SliderButtonPrev {
+  left: 10px;
+  top: 35%;
+}
+
+.SliderButtonNext {
+  right: 10px;
+  top: 35%;
+}
+
+.item-1 {
+  background: url("../images/sliderFistPicture.svg");
+}
+
+.item-2 {
+  background: url("../images/sliderSecondPicture.svg");
+}
+
+.item-3 {
+  background: url("../images/sliderThirdPicture.svg");
 }

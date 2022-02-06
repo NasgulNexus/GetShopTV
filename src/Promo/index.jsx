@@ -17,6 +17,7 @@ const Promo = () => {
       <div className="PromoQRInformation">
         <QRPromoInformation />
       </div>
+      <Slider />
     </div>
   );
 };
