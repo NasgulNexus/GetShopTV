@@ -1,10 +1,13 @@
 import "./App.css";
-import Banner from "./Banner";
+import { BrowserRouter as Router } from "react-router-dom";
+import RouterHead from "./RouterHead";
 
 const App = () => (
-  <div>
-    <Banner />
-  </div>
+  <Router>
+    <div>
+      <RouterHead />
+    </div>
+  </Router>
 );
 
 export default App;
