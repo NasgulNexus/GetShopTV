@@ -1,0 +1,24 @@
+.QRPromoInformationContainer {
+  position: absolute;
+  left: 926px;
+  top: 570px;
+}
+.QRPromoInformationText {
+  width: 194px;
+  height: 76px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0px 10px;
+}
+.QRPromoInformationImage {
+  height: 110px;
+  width: 110px;
+}
