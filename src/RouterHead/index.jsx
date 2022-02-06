@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Banner from "../Banner";
+import PromoMain from "../PromoMain";
 import Slider from "../Slider";
 
 const RouterHead = () => (
   <div>
     <Routes>
-      <Route path="/" element={<Banner />}></Route>
+      <Route path="/" element={<PromoMain />}></Route>
       <Route path="/promo" element={<Slider />}></Route>
     </Routes>
   </div>
