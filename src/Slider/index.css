@@ -24,23 +24,22 @@
   background: #181d28;
   color: #ffffff;
   cursor: pointer;
+  transform: skew(170deg);
+  border: 0;
+}
+.SliderButton:disabled {
+  background: #e8e8e8;
+  color: #181d28;
 }
 
 .SliderButtonPrev {
-  position: absolute;
-  left: 50.31%;
-  right: 44.06%;
-  top: 91.67%;
-  bottom: 3.33%;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-  background: #e8e8e8;
+  left: 45.31%;
+  bottom: 24px;
 }
 
 .SliderButtonNext {
-  left: 55.31%;
-  right: 39.06%;
-  top: 91.67%;
-  bottom: 3.33%;
+  left: 52%;
+  bottom: 24px;
 }
 
 .item-1 {
