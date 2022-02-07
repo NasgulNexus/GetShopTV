@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import QR from "../QR";
 
 const QRPromoInformation = () => {
   return (
@@ -9,7 +8,7 @@ const QRPromoInformation = () => {
         Сканируйте QR-код ДЛЯ ПОЛУЧЕНИЯ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ
       </p>
       <div className="QRPromoInformationImage">
-        <QR />
+        <svg className="QR" />
       </div>
     </div>
   );

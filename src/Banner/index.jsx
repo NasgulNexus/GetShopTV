@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-import QR from "../QR";
 
 const Banner = () => {
   return (
@@ -10,7 +9,7 @@ const Banner = () => {
         ИСПОЛНИТЕ МЕЧТУ ВАШЕГО МАЛЫША! ПОДАРИТЕ ЕМУ СОБАКУ!
       </p>
       <div className="bannerImage">
-        <QR />
+        <svg className="QRBanner" />
       </div>
       <p className="bannerText">Сканируйте QR-код или нажмите ОК</p>
       <Link to="/promo">

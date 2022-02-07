@@ -14,9 +14,14 @@
   text-align: right;
   text-transform: uppercase;
   color: #ffffff;
-  margin: 0px 10px;
+  margin: 17px 10px;
 }
 .QRPromoInformationImage {
   height: 110px;
   width: 110px;
+}
+.QR {
+  background: url(../images/QR1.svg);
+  height: 100%;
+  width: 100%;
 }

@@ -51,3 +51,8 @@
   color: #86d3f4;
   cursor: pointer;
 }
+.QRBanner {
+  background: url(../images/QR.svg);
+  height: 100%;
+  width: 100%;
+}
