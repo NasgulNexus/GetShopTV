@@ -25,6 +25,9 @@
   line-height: 37px;
   width: 260px;
   margin-left: 6px;
+  background: #86d3f4;
+  border: none;
+  outline: none;
 }
 .PanelInputText {
   font-family: Roboto;
@@ -52,12 +55,14 @@
 .PanelCheckboxDiv {
   display: flex;
   margin-top: 40px;
+  margin-left: 6px;
 }
 .PanelCheckbox {
   background: #86d3f4;
   border: 2px solid #000000;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .PanelLabel {
   font-family: Roboto;
@@ -91,4 +96,5 @@
   color: #4e4e4e;
   border: 1px solid #4e4e4e;
   background: #86d3f4;
+  cursor: default;
 }
