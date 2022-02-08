@@ -1,5 +1,5 @@
 .PanelContainer {
-  padding: 40px 24px;
+  padding: 40px 48px;
   width: 380px;
   height: 720px;
   box-sizing: border-box;
@@ -23,6 +23,8 @@
   font-weight: bold;
   font-size: 32px;
   line-height: 37px;
+  width: 260px;
+  margin-left: 6px;
 }
 .PanelInputText {
   font-family: Roboto;
@@ -38,8 +40,17 @@
 }
 .PanelDiv {
   width: 284px;
-  height: 278px;
-  margin: 13px 0px;
+  height: 242px;
+  margin-top: 26px;
+  margin-bottom: 13px;
+}
+.PanelButtonBox {
+  width: 100%;
+  height: calc(100% - 110px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 .PanelCheckbox {
   background: #86d3f4;

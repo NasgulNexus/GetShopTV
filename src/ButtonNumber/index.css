@@ -1,0 +1,22 @@
+.ButtonNumber {
+  width: 88px;
+  height: 52px;
+  background: #86d3f4;
+  font-size: 16px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+
+.ButtonNumber:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.ButtonDelete {
+  width: 186px;
+  grid-column: 1 / 2;
+}

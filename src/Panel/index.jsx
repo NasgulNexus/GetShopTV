@@ -1,5 +1,13 @@
 import React from "react";
 import "./index.css";
+import ButtonNumber from "../ButtonNumber";
+
+const buttonValue = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  ["стереть", 0]
+];
 
 const Panel = () => {
   return (
@@ -11,7 +19,26 @@ const Panel = () => {
       <p className="PanelInputText">
         и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации
       </p>
-      <div className="PanelDiv"></div>
+      <div className="PanelDiv">
+        <div className="PanelButtonBox">
+          {buttonValue.flat().map((btn, i) => {
+            return (
+              <ButtonNumber
+                key={i}
+                className={
+                  btn === "стереть"
+                    ? "ButtonNumber ButtonDelete"
+                    : "ButtonNumber"
+                }
+                value={btn}
+                onClick={() => {
+                  console.log(`${btn} clicked!`);
+                }}
+              />
+            );
+          })}
+        </div>
+      </div>
       <div>
         <input type="checkbox" className="PanelCheckbox" />
         <label className="PanelLabel">
