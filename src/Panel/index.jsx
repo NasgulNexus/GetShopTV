@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./index.css";
 import ButtonNumber from "../ButtonNumber";
 import { Link } from "react-router-dom";
+import PanelContainer from "./PanelContainer";
 
 const buttonValue = [
   [1, 2, 3],
@@ -34,7 +35,7 @@ const Panel = () => {
   };
 
   return (
-    <div className="PanelContainer">
+    <PanelContainer>
       <p className="PanelMainText">
         Введите ваш номер мобильного&nbsp;телефона
       </p>
@@ -75,7 +76,7 @@ const Panel = () => {
           Подтвердить номер
         </button>
       </Link>
-    </div>
+    </PanelContainer>
   );
 };
 

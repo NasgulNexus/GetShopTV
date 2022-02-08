@@ -1,8 +1,9 @@
 import React from "react";
-import "./index.css";
 import Slider from "../Slider";
 import ButtonClose from "../ButtonClose";
 import "../Promo/index.css";
+import QRPromoInformation from "../QRPromoInformation";
+import PromoFinalPanel from "./PromoFinalPanel";
 
 const PromoFinal = () => {
   return (
@@ -10,6 +11,12 @@ const PromoFinal = () => {
       <Slider />
       <div className="PromoButtonClose">
         <ButtonClose />
+      </div>
+      <div className="PromoQRInformation">
+        <QRPromoInformation />
+      </div>
+      <div className="PromoPanel">
+        <PromoFinalPanel />
       </div>
     </div>
   );
