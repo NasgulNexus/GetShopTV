@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className="bannerDiv">
       <p className="bannerHeadText">
-        ИСПОЛНИТЕ МЕЧТУ ВАШЕГО МАЛЫША! ПОДАРИТЕ ЕМУ СОБАКУ!
+        ИСПОЛНИТЕ&nbsp;МЕЧТУ&nbsp;ВАШЕГО МАЛЫША! ПОДАРИТЕ&nbsp;ЕМУ&nbsp;СОБАКУ!
       </p>
       <div className="bannerImage">
         <svg className="QRBanner" />

@@ -1,6 +1,11 @@
 .bannerDiv {
   width: 251px;
   height: 357px;
+  padding-top: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
   background: #86d3f4;
 }
 .bannerHeadText {
@@ -12,14 +17,11 @@
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 .bannerImage {
   height: 126px;
   width: 126px;
-  margin-left: 62.5px;
+  margin-left: 52.5px;
   margin-top: 4px;
   margin-bottom: 20px;
 }
@@ -34,11 +36,8 @@
   text-align: center;
 }
 .bannerButton {
-  position: absolute;
   width: 156px;
   height: 52px;
-  left: 47.5px;
-  top: 295px;
   background: #000000;
   font-family: Roboto;
   font-style: normal;
@@ -47,6 +46,8 @@
   line-height: 19px;
   color: #86d3f4;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 37.5px;
 }
 .QRBanner {
   background: url(../images/QR.svg);
