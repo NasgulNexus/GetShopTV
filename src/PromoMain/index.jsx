@@ -4,8 +4,10 @@ import Banner from "../Banner";
 
 const PromoMain = () => {
   return (
-    <div>
-      <Banner />
+    <div className="PromoMain">
+      <div className="PromoMainBanner">
+        <Banner />
+      </div>
     </div>
   );
 };

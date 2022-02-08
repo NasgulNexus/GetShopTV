@@ -1,9 +1,6 @@
 .bannerDiv {
-  position: absolute;
   width: 251px;
   height: 357px;
-  left: 0px;
-  top: 53px;
   background: #86d3f4;
 }
 .bannerHeadText {
