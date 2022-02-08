@@ -39,13 +39,13 @@ const Panel = () => {
           })}
         </div>
       </div>
-      <div>
+      <div className="PanelCheckboxDiv">
         <input type="checkbox" className="PanelCheckbox" />
         <label className="PanelLabel">
-          Согласие на обработку персональных данных
+          Согласие на обработку персональных&nbsp;данных
         </label>
       </div>
-      <button className="PanelButton">Подтвердить номер</button>
+      <button disabled={true} className="PanelButton">Подтвердить номер</button>
     </div>
   );
 };
