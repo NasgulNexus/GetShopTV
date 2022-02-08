@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import ButtonNumber from "../ButtonNumber";
+import { Link } from "react-router-dom";
 
 const buttonValue = [
   [1, 2, 3],
@@ -69,9 +70,11 @@ const Panel = () => {
           Согласие на обработку персональных&nbsp;данных
         </label>
       </div>
-      <button disabled={true} className="PanelButton">
-        Подтвердить номер
-      </button>
+      <Link to="/promofinal">
+        <button disabled={false} className="PanelButton">
+          Подтвердить номер
+        </button>
+      </Link>
     </div>
   );
 };
