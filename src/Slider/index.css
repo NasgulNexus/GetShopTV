@@ -6,14 +6,12 @@
 .SliderTrack {
   width: 100%;
   height: 100%;
-  background-color: blanchedalmond;
   display: flex;
   overflow: hidden;
 }
 .SliderItem {
   min-width: 1280px;
   height: 100%;
-  background-color: blueviolet;
   transition: 1s;
 }
 
@@ -43,13 +41,13 @@
 }
 
 .item-1 {
-  background: url("../images/sliderFistPicture.svg");
+  background: url("../../public/images/sliderFistPicture.png");
 }
 
 .item-2 {
-  background: url("../images/sliderSecondPicture.svg");
+  background: url("../../public/images/sliderSecondPicture.png");
 }
 
 .item-3 {
-  background: url("../images/sliderThirdPicture.svg");
+  background: url("../../public/images/sliderThirdPicture.png");
 }

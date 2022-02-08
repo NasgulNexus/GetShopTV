@@ -21,7 +21,7 @@
   width: 110px;
 }
 .QR {
-  background: url(../images/QR1.svg);
+  background: url(../../public/images/QR1.svg);
   height: 100%;
   width: 100%;
 }

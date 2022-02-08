@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./index.css";
 
 const POSITION_WIDTH = 1280;

@@ -50,7 +50,7 @@
   margin-left: 37.5px;
 }
 .QRBanner {
-  background: url(../images/QR.svg);
+  background: url(../../public/images/QR.svg);
   height: 100%;
   width: 100%;
 }
