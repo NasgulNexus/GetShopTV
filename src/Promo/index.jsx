@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import Slider from "../Slider";
 import ButtonClose from "../ButtonClose";
 import Panel from "../Panel";
 import QRPromoInformation from "../QRPromoInformation";
@@ -17,9 +16,7 @@ const Promo = () => {
       <div className="PromoQRInformation">
         <QRPromoInformation />
       </div>
-      <div className="PromoSlider">
-        <Slider />
-      </div>
+      <img className="PromoImage" />
     </div>
   );
 };

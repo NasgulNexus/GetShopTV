@@ -21,3 +21,8 @@
   left: 926px;
   top: 570px;
 }
+.PromoImage {
+  width: 1280px;
+  height: 720px;
+  background: url(../../public/images/imgPromo.png);
+}
