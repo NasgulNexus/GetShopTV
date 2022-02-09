@@ -13,6 +13,7 @@ const buttonValue = [
 
 const Panel = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [checkbox, setChecbox] = useState(false);
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
@@ -25,6 +26,10 @@ const Panel = () => {
     setPhoneNumber(function() {
       return phoneNumber.slice(0, -1);
     });
+  };
+
+  const HandlerToggle = () => {
+    setChecbox(!checkbox);
   };
 
   return (
@@ -65,13 +70,17 @@ const Panel = () => {
         </div>
       </div>
       <div className="PanelCheckboxDiv">
-        <input type="checkbox" className="PanelCheckbox" />
+        <input
+          type="checkbox"
+          className="PanelCheckbox"
+          onChange={HandlerToggle}
+        />
         <label className="PanelLabel">
           Согласие на обработку персональных&nbsp;данных
         </label>
       </div>
       <Link to="/promofinal">
-        <button disabled={false} className="PanelButton">
+        <button disabled={!checkbox} className="PanelButton">
           Подтвердить номер
         </button>
       </Link>
