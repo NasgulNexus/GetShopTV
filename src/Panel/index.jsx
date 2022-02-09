@@ -27,23 +27,22 @@ const Panel = () => {
     });
   };
 
-  const handleChange = e => {
-    const value = e.target.value;
-    if (value.length < 11) {
-      setPhoneNumber(value);
-    }
-  };
-
   return (
     <PanelContainer>
       <p className="PanelMainText">
         Введите ваш номер мобильного&nbsp;телефона
       </p>
-      <input
-        value={phoneNumber}
-        className="PanelInput"
-        onChange={handleChange}
-      />
+      <p className="PanelInput">{`+7(${phoneNumber[0] ? phoneNumber[0] : "_"}${
+        phoneNumber[1] ? phoneNumber[1] : "_"
+      }${phoneNumber[2] ? phoneNumber[2] : "_"})${
+        phoneNumber[3] ? phoneNumber[3] : "_"
+      }${phoneNumber[4] ? phoneNumber[4] : "_"}${
+        phoneNumber[5] ? phoneNumber[5] : "_"
+      }-${phoneNumber[6] ? phoneNumber[6] : "_"}${
+        phoneNumber[7] ? phoneNumber[7] : "_"
+      }-${phoneNumber[8] ? phoneNumber[8] : "_"}${
+        phoneNumber[9] ? phoneNumber[9] : "_"
+      }`}</p>
       <p className="PanelInputText">
         и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации
       </p>

@@ -28,6 +28,7 @@
   background: #86d3f4;
   border: none;
   outline: none;
+  letter-spacing: 1px;
 }
 .PanelInputText {
   font-family: Roboto;
