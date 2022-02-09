@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import ButtonNumber from "../ButtonNumber";
 import { Link } from "react-router-dom";
@@ -14,6 +14,23 @@ const buttonValue = [
 const Panel = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [checkbox, setChecbox] = useState(false);
+  const [response, setResponse] = useState("");
+
+  /*useEffect(()=>{
+    const access_key =  b1462b38258555ce649108e432aaede6;
+    const phone = phoneNumber;
+    if(phoneNumber.length===10){
+      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number).then(res => res.json()).then(
+        (result) => {
+         setResponse(response);
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+  )*/
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
