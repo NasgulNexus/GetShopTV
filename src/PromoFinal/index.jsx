@@ -19,7 +19,7 @@ const PromoFinal = () => {
   }, []);
   return (
     <div>
-      <Slider />
+      <Slider keyButton={keyButton} />
       <div className="PromoButtonClose">
         <ButtonClose />
       </div>

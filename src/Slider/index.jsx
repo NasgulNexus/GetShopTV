@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./index.css";
 
 const POSITION_WIDTH = 1280;
 
-const Slider = () => {
+const Slider = ({ keyButton }) => {
   const slider = useRef(null);
   const [countPosition, setCountPosition] = useState(0);
 
@@ -26,6 +26,16 @@ const Slider = () => {
         POSITION_WIDTH}px)`;
     });
   };
+
+  useEffect(() => {
+    const newKeyButton = keyButton[keyButton.length - 1];
+    if (newKeyButton === "ArrowLeft" && countPosition > 0) {
+      handlerPrev();
+    }
+    if (newKeyButton === "ArrowRight" && countPosition < 2) {
+      handlerNext();
+    }
+  }, [keyButton]);
 
   return (
     <div className="Slider">
