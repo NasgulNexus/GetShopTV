@@ -5,14 +5,11 @@ import Panel from "../Panel";
 import QRPromoInformation from "../QRPromoInformation";
 
 const Promo = () => {
-  const [key, setKey] = useState("");
+  const [keyButton, setKeyButton] = useState([]);
 
   useEffect(() => {
     const keyUp = event => {
-      console.log(
-        "Клавиша " + event.key + " отпущена. Её код - " + event.keyCode
-      );
-      setKey(event.key);
+      setKeyButton(prev => [...prev, event.key]);
     };
     document.addEventListener("keyup", keyUp);
 
@@ -27,7 +24,7 @@ const Promo = () => {
         <ButtonClose />
       </div>
       <div className="PromoPanel">
-        <Panel />
+        <Panel keyButton={keyButton} />
       </div>
       <div className="PromoQRInformation">
         <QRPromoInformation />

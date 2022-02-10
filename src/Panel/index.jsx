@@ -11,7 +11,7 @@ const buttonValue = [
   ["стереть", 0]
 ];
 
-const Panel = () => {
+const Panel = ({ keyButton }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [checkbox, setChecbox] = useState(false);
   const [response, setResponse] = useState("");
@@ -32,6 +32,23 @@ const Panel = () => {
           });
         }
   )*/
+
+  useEffect(() => {
+    const newKeyButton = keyButton[keyButton.length - 1];
+    if (newKeyButton !== undefined) {
+      if (
+        typeof parseInt(newKeyButton) === "number" &&
+        phoneNumber.length < 11
+      ) {
+        setPhoneNumber(phoneNumber + newKeyButton);
+      }
+      if (newKeyButton === "Backspace") {
+        setPhoneNumber(function() {
+          return phoneNumber.slice(0, -1);
+        });
+      }
+    }
+  }, [keyButton]);
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
