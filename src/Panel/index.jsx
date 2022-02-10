@@ -36,7 +36,7 @@ const Panel = ({ keyButton }) => {
   useEffect(() => {
     const newKeyButton = keyButton[keyButton.length - 1];
 
-    if (!isNaN(Number(newKeyButton)) && phoneNumber.length < 11) {
+    if (!isNaN(Number(newKeyButton)) && phoneNumber.length < 10) {
       setPhoneNumber(phoneNumber + newKeyButton);
     }
     if (newKeyButton === "Backspace") {
