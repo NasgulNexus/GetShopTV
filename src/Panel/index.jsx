@@ -35,18 +35,14 @@ const Panel = ({ keyButton }) => {
 
   useEffect(() => {
     const newKeyButton = keyButton[keyButton.length - 1];
-    if (newKeyButton !== undefined) {
-      if (
-        typeof parseInt(newKeyButton) === "number" &&
-        phoneNumber.length < 11
-      ) {
-        setPhoneNumber(phoneNumber + newKeyButton);
-      }
-      if (newKeyButton === "Backspace") {
-        setPhoneNumber(function() {
-          return phoneNumber.slice(0, -1);
-        });
-      }
+
+    if (!isNaN(Number(newKeyButton)) && phoneNumber.length < 11) {
+      setPhoneNumber(phoneNumber + newKeyButton);
+    }
+    if (newKeyButton === "Backspace") {
+      setPhoneNumber(function() {
+        return phoneNumber.slice(0, -1);
+      });
     }
   }, [keyButton]);
 
