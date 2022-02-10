@@ -12,7 +12,7 @@
 .SliderItem {
   min-width: 1280px;
   height: 100%;
-  transition: 1s;
+  transition: 1s ease-in-out;
 }
 
 .SliderButton {

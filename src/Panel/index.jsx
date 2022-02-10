@@ -21,16 +21,15 @@ const Panel = ({ keyButton }) => {
     const access_key =  b1462b38258555ce649108e432aaede6;
     const phone = phoneNumber;
     if(phoneNumber.length===10){
-      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number).then(res => res.json()).then(
-        (result) => {
+      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number + '&country_code=RU'+'&format=1')
+      .then(res => res.json())
+      .then(result => {
          setResponse(response);
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
+        })
+      .cath((error) => {
+        setResponse(false)
+      })
+    } 
   )*/
 
   useEffect(() => {
