@@ -1,0 +1,82 @@
+.CheckboxLabel {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  clear: both;
+}
+
+.CheckboxLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.Label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #565656;
+  margin-left: 64px;
+  margin-top: 6px;
+}
+.CheckboxLabel .CheckboxCustom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid #000000;
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.CheckboxLabel input:checked ~ .CheckboxCustom {
+  background-color: #86d3f4;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.CheckboxLabel .CheckboxCustom::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border: solid #009bff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.CheckboxLabel input:checked ~ .CheckboxCustom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 14px;
+  top: 3px;
+  width: 11px;
+  height: 25px;
+  border: 3px solid #000000;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.CheckboxLabelHidden {
+  display: none;
+}

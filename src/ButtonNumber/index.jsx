@@ -7,7 +7,7 @@ const ButtonNumber = ({ className, value, onClick, buttonRef }) => {
     if (value.toString() === buttonRef) {
       buttonItemRef.current.focus();
     }
-  }, [buttonRef]);
+  }, [buttonRef, value]);
 
   return (
     <button className={className} onClick={onClick} ref={buttonItemRef}>

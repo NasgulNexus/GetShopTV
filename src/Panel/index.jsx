@@ -3,6 +3,7 @@ import "./index.css";
 import ButtonNumber from "../ButtonNumber";
 import { Link } from "react-router-dom";
 import PanelContainer from "./PanelContainer";
+import Input from "../Input";
 
 const buttonValue = [
   [1, 2, 3],
@@ -27,7 +28,6 @@ const Panel = ({ keyButton }) => {
   const [valid, setValid] = useState(true);
 
   const [currentRef, setCurrentRef] = useState({ i: 0, j: 0, id: "1" });
-  const checkboxRef = useRef(null);
   const submitRef = useRef(null);
 
   const ArrowLeft = () => {
@@ -196,13 +196,19 @@ const Panel = ({ keyButton }) => {
   }, [keyButton]);
 
   useEffect(() => {
-    if (currentRef.id === "checkbox") {
-      checkboxRef.current.focus();
-    }
     if (currentRef.id === "submit") {
       submitRef.current.focus();
     }
   }, [currentRef]);
+
+  useEffect(() => {
+    if (phoneNumber.length < 10 && checkbox === true && valid !== false) {
+      setValid(prev => !prev);
+    }
+    if (phoneNumber.length === 10) {
+      setValid(prev => !prev);
+    }
+  }, [checkbox, phoneNumber]);
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
@@ -260,22 +266,21 @@ const Panel = ({ keyButton }) => {
         </div>
       </div>
       <div className="PanelCheckboxDiv">
-        {valid ? (
-          <label className="PanelCheckboxLabel">
-            <input ref={checkboxRef} type="checkbox" onChange={HandlerToggle} />
-            <span className="PanelCheckboxCustom"></span>
-            <p className="PanelLabel">
-              Согласие на обработку персональных&nbsp;данных
-            </p>
-          </label>
-        ) : (
-          <p className="ErrorMessage">Неверно введён номер</p>
-        )}
+        <Input
+          classCheck={
+            valid === true
+              ? "CheckboxLabel"
+              : "CheckboxLabel CheckboxLabelHidden"
+          }
+          onChange={HandlerToggle}
+          checkboxRef={currentRef.id}
+        />
+        {valid ? null : <p className="ErrorMessage">Неверно введён номер</p>}
       </div>
       <Link to="/promofinal">
         <button
           ref={submitRef}
-          disabled={!checkbox && valid}
+          disabled={!checkbox && !valid}
           className="PanelButton"
         >
           Подтвердить номер
