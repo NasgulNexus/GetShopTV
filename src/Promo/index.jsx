@@ -12,7 +12,9 @@ const Promo = () => {
       if (event.key === "Tab") {
         event.preventDefault();
       }
-      setKeyButton(prev => [...prev, event.key]);
+      if (event.keyCode !== 32) {
+        setKeyButton(prev => [...prev, event.key]);
+      }
     };
     document.addEventListener("keydown", keyDown);
     return () => {
