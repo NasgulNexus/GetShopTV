@@ -243,9 +243,7 @@ const Panel = ({ keyButton }) => {
         phoneNumber[8] ? phoneNumber[8] : "_"
       }${phoneNumber[9] ? phoneNumber[9] : "_"}`}</p>
       <p className="PanelInputText">
-        и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации{" "}
-        {valid.toString()}
-        {checkbox.toString()}
+        и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации
       </p>
       <div className="PanelDiv">
         <div className="PanelButtonBox">
