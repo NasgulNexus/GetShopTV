@@ -121,11 +121,19 @@ const Panel = ({ keyButton }) => {
 
   const ArrowUp = () => {
     if (currentRef.i > 0) {
-      setCurrentRef(prev => ({
-        ...prev,
-        i: prev.i - 1,
-        id: keyboard[prev.i - 1][prev.j].id
-      }));
+      if (currentRef.i === 3 && currentRef.j === 1) {
+        setCurrentRef(prev => ({
+          j: 2,
+          i: prev.i - 1,
+          id: keyboard[prev.i - 1][2].id
+        }));
+      } else {
+        setCurrentRef(prev => ({
+          ...prev,
+          i: prev.i - 1,
+          id: keyboard[prev.i - 1][prev.j].id
+        }));
+      }
     }
   };
 
