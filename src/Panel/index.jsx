@@ -101,16 +101,13 @@ const Panel = ({ keyButton }) => {
       </div>
       <div className="PanelCheckboxDiv">
         {valid ? (
-          <>
-            <input
-              type="checkbox"
-              className="PanelCheckbox"
-              onChange={HandlerToggle}
-            />
-            <label className="PanelLabel">
+          <label className="PanelCheckboxLabel">
+            <input type="checkbox" onChange={HandlerToggle} />
+            <span className="PanelCheckboxCustom"></span>
+            <div className="PanelLabel">
               Согласие на обработку персональных&nbsp;данных
-            </label>
-          </>
+            </div>
+          </label>
         ) : (
           <p className="ErrorMessage">Неверно введён номер</p>
         )}
