@@ -15,19 +15,46 @@
   transition: 1s ease-in-out;
 }
 
+.SliderButtonDiv {
+  position: absolute;
+}
+
 .SliderButton {
   width: 72px;
   height: 36px;
-  position: absolute;
+  display: flex;
   background: #181d28;
   color: #ffffff;
   cursor: pointer;
   transform: skew(170deg);
   border: 0;
 }
+
+.SliderButtonIconLeft {
+  background: url(../../public/images/leftArrowSliderBlack.svg);
+  width: 8px;
+  height: 15px;
+  margin: auto;
+}
+
+.SliderButtonIconRight {
+  background: url(../../public/images/rightArrowSliderBlack.svg);
+  width: 8px;
+  height: 15px;
+  margin: auto;
+}
+
 .SliderButton:disabled {
   background: #e8e8e8;
   color: #181d28;
+}
+
+.SliderButton:disabled .SliderButtonIconLeft {
+  background: url(../../public/images/leftArrowSlider.svg);
+}
+
+.SliderButton:disabled .SliderButtonIconRight {
+  background: url(../../public/images/RightArrowSlider.svg);
 }
 
 .SliderButtonPrev {

@@ -40,24 +40,28 @@ const Slider = ({ keyButton }) => {
   return (
     <div className="Slider">
       <div className="SliderTrack" ref={slider}>
-        <img className="SliderItem item-1" />
-        <img className="SliderItem item-2" />
-        <img className="SliderItem item-3" />
+        <img alt="slider1" className="SliderItem item-1" />
+        <img alt="slider2" className="SliderItem item-2" />
+        <img alt="slider3" className="SliderItem item-3" />
       </div>
-      <button
-        disabled={countPosition === 0}
-        className="SliderButton SliderButtonPrev"
-        onClick={handlerPrev}
-      >
-        {`<`}
-      </button>
-      <button
-        disabled={countPosition === 2}
-        className="SliderButton SliderButtonNext"
-        onClick={handlerNext}
-      >
-        {`>`}
-      </button>
+      <div className="SliderButtonDiv SliderButtonPrev">
+        <button
+          disabled={countPosition === 0}
+          className="SliderButton SliderButtonPrev"
+          onClick={handlerPrev}
+        >
+          <span className="SliderButtonIconLeft"></span>
+        </button>
+      </div>
+      <div className="SliderButtonDiv SliderButtonNext">
+        <button
+          disabled={countPosition === 2}
+          className="SliderButton"
+          onClick={handlerNext}
+        >
+          <span className="SliderButtonIconRight"></span>
+        </button>
+      </div>
     </div>
   );
 };
