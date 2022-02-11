@@ -40,9 +40,9 @@ const Slider = ({ keyButton }) => {
   return (
     <div className="Slider">
       <div className="SliderTrack" ref={slider}>
-        <img alt="slider1" className="SliderItem item-1" />
-        <img alt="slider2" className="SliderItem item-2" />
-        <img alt="slider3" className="SliderItem item-3" />
+        <div className="SliderItem item-1" />
+        <div className="SliderItem item-2" />
+        <div className="SliderItem item-3" />
       </div>
       <div className="SliderButtonDiv SliderButtonPrev">
         <button
