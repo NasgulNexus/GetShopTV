@@ -24,7 +24,6 @@ const keyboard = [
 const Panel = ({ keyButton }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [checkbox, setChecbox] = useState(false);
-  const [response, setResponse] = useState("");
   const [valid, setValid] = useState(true);
 
   const [currentRef, setCurrentRef] = useState({ i: 0, j: 0, id: "1" });
@@ -202,11 +201,11 @@ const Panel = ({ keyButton }) => {
   }, [currentRef]);
 
   useEffect(() => {
-    if (phoneNumber.length < 10 && checkbox === true && valid !== false) {
-      setValid(prev => !prev);
+    if (phoneNumber.length < 10 && checkbox === true) {
+      setValid(false);
     }
     if (phoneNumber.length === 10) {
-      setValid(prev => !prev);
+      setValid(true);
     }
   }, [checkbox, phoneNumber]);
 
@@ -244,7 +243,9 @@ const Panel = ({ keyButton }) => {
         phoneNumber[8] ? phoneNumber[8] : "_"
       }${phoneNumber[9] ? phoneNumber[9] : "_"}`}</p>
       <p className="PanelInputText">
-        и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации
+        и с Вами свяжется наш менеждер для дальнейшей&nbsp;консультации{" "}
+        {valid.toString()}
+        {checkbox.toString()}
       </p>
       <div className="PanelDiv">
         <div className="PanelButtonBox">
@@ -268,9 +269,9 @@ const Panel = ({ keyButton }) => {
       <div className="PanelCheckboxDiv">
         <Input
           classCheck={
-            valid === true
-              ? "CheckboxLabel"
-              : "CheckboxLabel CheckboxLabelHidden"
+            valid === false
+              ? "CheckboxLabel CheckboxLabelHidden"
+              : "CheckboxLabel"
           }
           onChange={HandlerToggle}
           checkboxRef={currentRef.id}
@@ -280,7 +281,7 @@ const Panel = ({ keyButton }) => {
       <Link to="/promofinal">
         <button
           ref={submitRef}
-          disabled={!checkbox && !valid}
+          disabled={!valid || !checkbox}
           className="PanelButton"
         >
           Подтвердить номер
@@ -291,18 +292,3 @@ const Panel = ({ keyButton }) => {
 };
 
 export default Panel;
-
-/*useEffect(()=>{
-    const access_key =  b1462b38258555ce649108e432aaede6;
-    const phone = phoneNumber;
-    if(phoneNumber.length===10){
-      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number + '&country_code=RU'+'&format=1')
-      .then(res => res.json())
-      .then(result => {
-         setResponse(response);
-        })
-      .cath((error) => {
-        setResponse(false)
-      })
-    } 
-  )*/
