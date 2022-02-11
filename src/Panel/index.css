@@ -40,7 +40,7 @@
   align-items: center;
   text-align: center;
   color: #000000;
-  margin: 13px 0px;
+  margin-top: -19px;
 }
 .PanelDiv {
   width: 284px;
@@ -64,6 +64,10 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+.PanelCheckbox:checked {
+  background: #86d3f4;
+  color: #000000;
 }
 .PanelLabel {
   font-family: Roboto;

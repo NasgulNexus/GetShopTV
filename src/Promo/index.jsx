@@ -29,7 +29,7 @@ const Promo = () => {
       <div className="PromoQRInformation">
         <QRPromoInformation />
       </div>
-      <img className="PromoImage" />
+      <img alt="image" className="PromoImage" />
     </div>
   );
 };
