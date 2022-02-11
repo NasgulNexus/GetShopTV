@@ -5,28 +5,27 @@
   box-sizing: border-box;
   background: #ffffff;
   cursor: pointer;
+  display: flex;
+}
+.buttonCloseIcon {
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  background: url(../../public/images/closeIcon.svg);
 }
 
-.buttonCloseIcon {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
+.buttonClose:hover {
+  background: #000000;
 }
-.buttonCloseIcon:before,
-.buttonCloseIcon:after {
-  position: absolute;
-  left: 22px;
-  content: " ";
-  height: 28px;
-  width: 3px;
-  top: -22px;
-  background-color: #333;
+
+.buttonClose:hover .buttonCloseIcon {
+  background: url(../../public/images/closeIconWhite.svg);
 }
-.buttonCloseIcon:before {
-  transform: rotate(45deg);
+
+.buttonClose:focus {
+  background: #000000;
 }
-.buttonCloseIcon:after {
-  transform: rotate(-45deg);
+
+.buttonClose:focus .buttonCloseIcon {
+  background: url(../../public/images/closeIconWhite.svg);
 }

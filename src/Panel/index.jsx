@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import ButtonNumber from "../ButtonNumber";
 import { Link } from "react-router-dom";
@@ -11,11 +11,21 @@ const buttonValue = [
   ["стереть", 0]
 ];
 
+const keyboard = [
+  [{ id: 1 }, { id: 2 }, { id: 3 }],
+  [{ id: 4 }, { id: 5 }, { id: 6 }],
+  [{ id: 7 }, { id: 8 }, { id: 9 }],
+  [{ id: "backspace" }, { id: 0 }],
+  [{ id: "checkbox" }],
+  [{ id: "submit" }]
+];
+
 const Panel = ({ keyButton }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [checkbox, setChecbox] = useState(false);
   const [response, setResponse] = useState("");
   const [valid, setValid] = useState(true);
+  const [curreant, setCurreant] = useState("1");
 
   /*useEffect(()=>{
     const access_key =  b1462b38258555ce649108e432aaede6;
@@ -34,7 +44,6 @@ const Panel = ({ keyButton }) => {
 
   useEffect(() => {
     const newKeyButton = keyButton[keyButton.length - 1];
-
     if (!isNaN(Number(newKeyButton)) && phoneNumber.length < 10) {
       setPhoneNumber(phoneNumber + newKeyButton);
     }
@@ -44,6 +53,18 @@ const Panel = ({ keyButton }) => {
       });
     }
   }, [keyButton]);
+
+  useEffect(() => {
+    for (let i = 0; i < keyboard.length; i++) {
+      for (let j = 0; j < keyboard.length; j++) {
+        if (keyboard[i][j] !== undefined) {
+          console.log(keyboard[i][j].ref);
+          keyboard[i][j].ref = null;
+        }
+      }
+    }
+    console.log(keyboard);
+  }, [keyboard]);
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
@@ -94,6 +115,7 @@ const Panel = ({ keyButton }) => {
                 }
                 value={btn}
                 onClick={btn === "стереть" ? handlerDelete : handlerNumber}
+                buttonRef={btn}
               />
             );
           })}
@@ -104,9 +126,9 @@ const Panel = ({ keyButton }) => {
           <label className="PanelCheckboxLabel">
             <input type="checkbox" onChange={HandlerToggle} />
             <span className="PanelCheckboxCustom"></span>
-            <div className="PanelLabel">
+            <p className="PanelLabel">
               Согласие на обработку персональных&nbsp;данных
-            </div>
+            </p>
           </label>
         ) : (
           <p className="ErrorMessage">Неверно введён номер</p>
