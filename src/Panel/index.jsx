@@ -12,10 +12,10 @@ const buttonValue = [
 ];
 
 const keyboard = [
-  [{ id: 1 }, { id: 2 }, { id: 3 }],
-  [{ id: 4 }, { id: 5 }, { id: 6 }],
-  [{ id: 7 }, { id: 8 }, { id: 9 }],
-  [{ id: "backspace" }, { id: 0 }],
+  [{ id: "1" }, { id: "2" }, { id: "3" }],
+  [{ id: "4" }, { id: "5" }, { id: "6" }],
+  [{ id: "7" }, { id: "8" }, { id: "9" }],
+  [{ id: "стереть" }, { id: "0" }],
   [{ id: "checkbox" }],
   [{ id: "submit" }]
 ];
@@ -25,22 +25,143 @@ const Panel = ({ keyButton }) => {
   const [checkbox, setChecbox] = useState(false);
   const [response, setResponse] = useState("");
   const [valid, setValid] = useState(true);
-  const [curreant, setCurreant] = useState("1");
 
-  /*useEffect(()=>{
-    const access_key =  b1462b38258555ce649108e432aaede6;
-    const phone = phoneNumber;
-    if(phoneNumber.length===10){
-      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number + '&country_code=RU'+'&format=1')
-      .then(res => res.json())
-      .then(result => {
-         setResponse(response);
-        })
-      .cath((error) => {
-        setResponse(false)
-      })
-    } 
-  )*/
+  const [currentRef, setCurrentRef] = useState({ i: 0, j: 0, id: "1" });
+  const checkboxRef = useRef(null);
+  const submitRef = useRef(null);
+
+  const ArrowLeft = () => {
+    if (currentRef.i < 3) {
+      if (currentRef.j - 1 > -1) {
+        setCurrentRef(prev => ({
+          ...prev,
+          j: prev.j - 1,
+          id: keyboard[prev.i][prev.j - 1].id
+        }));
+      } else {
+        if (currentRef.i !== 0) {
+          setCurrentRef(prev => ({
+            i: prev.i - 1,
+            j: 2,
+            id: keyboard[prev.i - 1][2].id
+          }));
+        }
+      }
+    }
+    if (currentRef.i === 3) {
+      if (currentRef.j - 1 > -1) {
+        setCurrentRef(prev => ({
+          ...prev,
+          j: prev.j - 1,
+          id: keyboard[prev.i][prev.j - 1].id
+        }));
+      } else {
+        setCurrentRef(prev => ({
+          i: prev.i - 1,
+          j: 2,
+          id: keyboard[prev.i - 1][2].id
+        }));
+      }
+    }
+    if (currentRef.i === 4) {
+      setCurrentRef(prev => ({
+        i: prev.i - 1,
+        j: 1,
+        id: keyboard[prev.i - 1][1].id
+      }));
+    }
+    if (currentRef.i === 5) {
+      setCurrentRef(prev => ({
+        i: prev.i - 1,
+        j: 0,
+        id: keyboard[prev.i - 1][0].id
+      }));
+    }
+  };
+
+  const ArrowRight = () => {
+    if (currentRef.i < 3) {
+      if (currentRef.j + 1 < 3) {
+        setCurrentRef(prev => ({
+          ...prev,
+          j: prev.j + 1,
+          id: keyboard[prev.i][prev.j + 1].id
+        }));
+      } else {
+        setCurrentRef(prev => ({
+          i: prev.i + 1,
+          j: 0,
+          id: keyboard[prev.i + 1][0].id
+        }));
+      }
+    }
+    if (currentRef.i === 3) {
+      if (currentRef.j + 1 < 2) {
+        setCurrentRef(prev => ({
+          ...prev,
+          j: prev.j + 1,
+          id: keyboard[prev.i][prev.j + 1].id
+        }));
+      } else {
+        setCurrentRef(prev => ({
+          i: prev.i + 1,
+          j: 0,
+          id: keyboard[prev.i + 1][0].id
+        }));
+      }
+    }
+    if (currentRef.i < 5 && currentRef.i > 3) {
+      setCurrentRef(prev => ({
+        i: prev.i + 1,
+        j: 0,
+        id: keyboard[prev.i + 1][0].id
+      }));
+    }
+  };
+
+  const ArrowUp = () => {
+    if (currentRef.i > 0) {
+      setCurrentRef(prev => ({
+        ...prev,
+        i: prev.i - 1,
+        id: keyboard[prev.i - 1][prev.j].id
+      }));
+    }
+  };
+
+  const ArrowDown = () => {
+    if (currentRef.i < 5) {
+      if (currentRef.i < 2) {
+        setCurrentRef(prev => ({
+          ...prev,
+          i: prev.i + 1,
+          id: keyboard[prev.i + 1][prev.j].id
+        }));
+      }
+      if (currentRef.i === 2) {
+        if (currentRef.j < 2) {
+          setCurrentRef(prev => ({
+            j: 0,
+            i: prev.i + 1,
+            id: keyboard[prev.i + 1][0].id
+          }));
+        } else {
+          setCurrentRef(prev => ({
+            j: 1,
+            i: prev.i + 1,
+            id: keyboard[prev.i + 1][1].id
+          }));
+        }
+      }
+      if (currentRef.i > 2) {
+        setCurrentRef(prev => ({
+          j: 0,
+          i: prev.i + 1,
+          id: keyboard[prev.i + 1][0].id
+        }));
+      }
+    }
+  };
 
   useEffect(() => {
     const newKeyButton = keyButton[keyButton.length - 1];
@@ -52,19 +173,28 @@ const Panel = ({ keyButton }) => {
         return phoneNumber.slice(0, -1);
       });
     }
+    if (newKeyButton === "ArrowLeft") {
+      ArrowLeft();
+    }
+    if (newKeyButton === "ArrowRight") {
+      ArrowRight();
+    }
+    if (newKeyButton === "ArrowUp") {
+      ArrowUp();
+    }
+    if (newKeyButton === "ArrowDown") {
+      ArrowDown();
+    }
   }, [keyButton]);
 
   useEffect(() => {
-    for (let i = 0; i < keyboard.length; i++) {
-      for (let j = 0; j < keyboard.length; j++) {
-        if (keyboard[i][j] !== undefined) {
-          console.log(keyboard[i][j].ref);
-          keyboard[i][j].ref = null;
-        }
-      }
+    if (currentRef.id === "checkbox") {
+      checkboxRef.current.focus();
     }
-    console.log(keyboard);
-  }, [keyboard]);
+    if (currentRef.id === "submit") {
+      submitRef.current.focus();
+    }
+  }, [currentRef]);
 
   const handlerNumber = e => {
     const value = e.target.innerHTML;
@@ -115,7 +245,7 @@ const Panel = ({ keyButton }) => {
                 }
                 value={btn}
                 onClick={btn === "стереть" ? handlerDelete : handlerNumber}
-                buttonRef={btn}
+                buttonRef={currentRef.id}
               />
             );
           })}
@@ -124,7 +254,7 @@ const Panel = ({ keyButton }) => {
       <div className="PanelCheckboxDiv">
         {valid ? (
           <label className="PanelCheckboxLabel">
-            <input type="checkbox" onChange={HandlerToggle} />
+            <input ref={checkboxRef} type="checkbox" onChange={HandlerToggle} />
             <span className="PanelCheckboxCustom"></span>
             <p className="PanelLabel">
               Согласие на обработку персональных&nbsp;данных
@@ -135,7 +265,11 @@ const Panel = ({ keyButton }) => {
         )}
       </div>
       <Link to="/promofinal">
-        <button disabled={!checkbox && valid} className="PanelButton">
+        <button
+          ref={submitRef}
+          disabled={!checkbox && valid}
+          className="PanelButton"
+        >
           Подтвердить номер
         </button>
       </Link>
@@ -144,3 +278,18 @@ const Panel = ({ keyButton }) => {
 };
 
 export default Panel;
+
+/*useEffect(()=>{
+    const access_key =  b1462b38258555ce649108e432aaede6;
+    const phone = phoneNumber;
+    if(phoneNumber.length===10){
+      fetch( 'http://apilayer.net/api/validate?access_key=' + access_key + '&number=' + phone_number + '&country_code=RU'+'&format=1')
+      .then(res => res.json())
+      .then(result => {
+         setResponse(response);
+        })
+      .cath((error) => {
+        setResponse(false)
+      })
+    } 
+  )*/

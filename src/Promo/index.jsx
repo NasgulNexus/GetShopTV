@@ -8,13 +8,15 @@ const Promo = () => {
   const [keyButton, setKeyButton] = useState([]);
 
   useEffect(() => {
-    const keyUp = event => {
+    const keyDown = event => {
+      if (event.key === "Tab") {
+        event.preventDefault();
+      }
       setKeyButton(prev => [...prev, event.key]);
     };
-    document.addEventListener("keyup", keyUp);
-
+    document.addEventListener("keydown", keyDown);
     return () => {
-      document.removeEventListener("keyup", keyUp);
+      document.removeEventListener("keydown", keyDown);
     };
   }, []);
 

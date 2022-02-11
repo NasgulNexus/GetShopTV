@@ -23,12 +23,10 @@
   font-weight: bold;
   font-size: 32px;
   line-height: 37px;
-  width: 260px;
   margin-left: 6px;
   background: #86d3f4;
   border: none;
   outline: none;
-  letter-spacing: 1px;
 }
 .PanelInputText {
   font-family: Roboto;
