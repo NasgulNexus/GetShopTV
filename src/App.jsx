@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import RouterHead from "./RouterHead";
 
 const App = () => (
-  <Router>
+  <Router basename="/GetShopTV">
     <div>
       <RouterHead />
     </div>
